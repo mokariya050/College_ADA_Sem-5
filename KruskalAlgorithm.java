@@ -4,14 +4,12 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class kruskal_algorithms {
-
-    // Find parent of node (with path compression)
     static int find(int[] parent, int node) {
         if (parent[node] == node) return node;
         return parent[node] = find(parent, parent[node]);
     }
 
-    // Union two subsets (by rank)
+    // Union two subsets
     static void union(int[] parent, int[] rank, int rootU, int rootV) {
         if (rank[rootU] < rank[rootV]) {
             parent[rootU] = rootV;
@@ -70,7 +68,6 @@ public class kruskal_algorithms {
     }
 
     static void kruskal(int[][] arr, int nVertices) {
-        // Step 1: Sort edges by weight using merge sort
         mergeSort(arr, 0, arr.length - 1);
 
         ArrayList<int[]> mst = new ArrayList<>();
@@ -101,7 +98,6 @@ public class kruskal_algorithms {
             i++;
         }
 
-        // Print MST and its total weight
         int totalWeight = 0;
         System.out.println("Minimum Spanning Tree:");
         for (int[] edge : mst) {
@@ -131,6 +127,7 @@ public class kruskal_algorithms {
         long endTime=System.nanoTime();
         System.out.println("Time complexity for kruskal algorithm is:"+(endTime-startTime)/1000000+" ms");
     }
+
 
 
     }
