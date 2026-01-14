@@ -6,18 +6,16 @@ import java.util.Scanner;
 
 public class Searching {
 
-    // Recursive Binary Search
     static int binarySearch(int[] arr, int key, int start, int end) {
         if (start > end) return -1;
 
-        int mid = start + (end - start) / 2;//reduce overflow
+        int mid = start + (end - start) / 2; // this is used if the int length is overflow 
 
         if (arr[mid] == key) return mid;
         else if (key > arr[mid]) return binarySearch(arr, key, mid + 1, end);
         else return binarySearch(arr, key, start, mid - 1);
     }
 
-    // Linear Search
     static int linearSearch(int[] arr, int key) {
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] == key) return i;
@@ -25,7 +23,7 @@ public class Searching {
         return -1;
     }
 
-    // Print Array
+   
     static void printArray(int[] arr) {
         System.out.println("Sorted Array: " +Arrays.toString(arr));
     }
@@ -38,9 +36,8 @@ public class Searching {
         int n = sc.nextInt();
         int[] arr = new int[n];
 
-        // Fill array with random values
         for (int i = 0; i < n; i++) {
-            arr[i] = random.nextInt(10000);  // 0 to 99
+            arr[i] = random.nextInt(10000);
         }
 
         Arrays.sort(arr);
@@ -96,4 +93,5 @@ public class Searching {
             }
         }
     }
+
 }
