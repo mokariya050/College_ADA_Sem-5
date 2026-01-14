@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class chain_matrix_multiplication {
 
-    // Print DP table
+    //  DP table
     static void print(int arr[][]) {
         for (int i = 1; i < arr.length; i++) {
             for (int j = 1; j < arr.length; j++) {
@@ -46,7 +46,6 @@ public class chain_matrix_multiplication {
 
         ArrayList<Integer> d = new ArrayList<>();
 
-        // Enter dimensions (n matrices = n+1 numbers)
         for (int i = 0; i < n; i++) {
             System.out.print("Enter rows and columns of matrix " + (i + 1) + ": ");
             int r = sc.nextInt();
@@ -56,7 +55,6 @@ public class chain_matrix_multiplication {
             d.add(c);
         }
 
-        // Measure execution time
         long startTime = System.nanoTime();
         chain(d, n);
         long endTime = System.nanoTime();
@@ -65,3 +63,4 @@ public class chain_matrix_multiplication {
         sc.close();
     }
 }
+
