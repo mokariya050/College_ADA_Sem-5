@@ -9,8 +9,8 @@ public class rabin_karp {
 
         int n = text.length();
         int m = pattern.length();
-        int d = 256; // number of characters in input alphabet
-        int q = 101; // prime modulus
+        int d = 256; 
+        int q = 101; 
 
         int pHash = 0;
         int tHash = 0;
@@ -67,3 +67,4 @@ public class rabin_karp {
         sc.close();
     }
 }
+
