@@ -26,9 +26,9 @@ public class prims_algorithm {
     }
 
     static void primMST(int graph[][], int n) {
-        int parent[] = new int[n];   // Stores constructed MST
-        int key[] = new int[n];      // Minimum weight edge to each vertex
-        boolean mstSet[] = new boolean[n];  // To represent included vertices
+        int parent[] = new int[n];   
+        int key[] = new int[n];      
+        boolean mstSet[] = new boolean[n]; 
 
 
         for (int i = 0; i < n; i++) {
@@ -36,12 +36,11 @@ public class prims_algorithm {
             mstSet[i] = false;
         }
 
-        // Start from first vertex
         key[0] = 0;
-        parent[0] = -1; // Root of MST
+        parent[0] = -1;
 
         for (int count = 0; count < n - 1; count++) {
-            int u = minKey(key, mstSet, n); // Pick minimum key vertex
+            int u = minKey(key, mstSet, n); 
             mstSet[u] = true;
 
             for (int v = 0; v < n; v++) {
@@ -76,3 +75,4 @@ public class prims_algorithm {
         sc.close();
     }
 }
+
