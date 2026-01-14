@@ -1,3 +1,4 @@
+//this code work for any n x m and m x o matrix 
 package lab_quation;
 
 import java.util.Random;
@@ -9,14 +10,14 @@ public class matrixMultiplication {
     static int[][] strassen2X2(int A[][], int B[][]) {
         int[][] result = new int[2][2];
 
-        // Standard Strassen formulas
-        int M1 = (A[0][0] + A[1][1]) * (B[0][0] + B[1][1]);   // (A11 + A22)(B11 + B22)
-        int M2 = (A[1][0] + A[1][1]) * B[0][0];               // (A21 + A22)(B11)
-        int M3 = A[0][0] * (B[0][1] - B[1][1]);               // A11(B12 − B22)
-        int M4 = A[1][1] * (B[1][0] - B[0][0]);               // A22(B21 − B11)
-        int M5 = (A[0][0] + A[0][1]) * B[1][1];               // (A11 + A12)(B22)
-        int M6 = (A[1][0] - A[0][0]) * (B[0][0] + B[0][1]);   // (A21 − A11)(B11 + B12)
-        int M7 = (A[0][1] - A[1][1]) * (B[1][0] + B[1][1]);   // (A12 − A22)(B21 + B22)
+
+        int M1 = (A[0][0] + A[1][1]) * (B[0][0] + B[1][1]);   
+        int M2 = (A[1][0] + A[1][1]) * B[0][0];               
+        int M3 = A[0][0] * (B[0][1] - B[1][1]);               
+        int M4 = A[1][1] * (B[1][0] - B[0][0]);             
+        int M5 = (A[0][0] + A[0][1]) * B[1][1];             
+        int M6 = (A[1][0] - A[0][0]) * (B[0][0] + B[0][1]);  
+        int M7 = (A[0][1] - A[1][1]) * (B[1][0] + B[1][1]);   
 
         result[0][0] = M1 + M4 - M5 + M7;
         result[0][1] = M3 + M5;
@@ -26,8 +27,6 @@ public class matrixMultiplication {
         return result;
     }
 
-
-    // Add two matrices
     static int[][] add(int[][] A, int[][] B) {
         int n = A.length;
         int[][] result = new int[n][n];
@@ -37,7 +36,6 @@ public class matrixMultiplication {
         return result;
     }
 
-    // Subtract two matrices
     static int[][] subtract(int[][] A, int[][] B) {
         int n = A.length;
         int[][] result = new int[n][n];
@@ -47,7 +45,6 @@ public class matrixMultiplication {
         return result;
     }
 
-    // Strassen's algorithm for NxN matrices (power of 2)
     static int[][] strassen(int[][] A, int[][] B, int n) {
         if (n == 2) {
             return strassen2X2(A, B);
@@ -195,4 +192,5 @@ public class matrixMultiplication {
 
     }
 }
+
 
