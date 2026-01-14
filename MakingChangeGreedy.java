@@ -40,18 +40,16 @@ public class making_change_greedy {
     }
 
     static void making_chnage(int coin[], int change) {
-        // Step 1: Sort coins in descending order
+       
         merge_sort(coin, 0, coin.length - 1);
 
-        // Step 2: Print sorted coins
         System.out.print("Coins sorted in descending order: ");
         for (int c : coin) System.out.print(c + " ");
         System.out.println();
 
         ArrayList<Integer> result = new ArrayList<>();
         int n = 0;
-
-        // Step 3: Select coins using Greedy method
+        
         while (n <= coin.length - 1 && change > 0) {
             if (coin[n] <= change) {
                 result.add(coin[n]);
@@ -61,7 +59,6 @@ public class making_change_greedy {
             }
         }
 
-        // Step 4: Display results
         System.out.println("\n--- Greedy Making Change Result ---");
         if (change == 0) {
             System.out.println("Selected coins: " + result);
@@ -69,10 +66,8 @@ public class making_change_greedy {
             System.out.println("Perfect change not possible. Closest selection of coins: " + result);
         }
 
-        // Step 5: Show total coins used
         System.out.println("Total coins used: " + result.size());
 
-        // Step 6: Verify total change made
         int total = result.stream().mapToInt(Integer::intValue).sum();
         System.out.println("Total change made: " + total);
     }
@@ -80,7 +75,6 @@ public class making_change_greedy {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        // Take user input for coin denominations
         System.out.print("Enter number of coin denominations: ");
         int n = sc.nextInt();
         int coin[] = new int[n];
@@ -101,3 +95,4 @@ public class making_change_greedy {
                 + (endTime - startTime) / 1000000.0 + " ms");
     }
 }
+
