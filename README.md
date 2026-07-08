@@ -1,4 +1,4 @@
-# College_ADA_Sem-5
+# Analysis-Design-And-Algorithms
 This repository contains self-written implementations of Analysis and Design of Algorithms (ADA) developed during Semester 5 as part of my college coursework.
 
 Algorithms Covered:
